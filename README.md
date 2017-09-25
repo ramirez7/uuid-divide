@@ -8,7 +8,7 @@ Useful for evenly dividing operations over uniformly-distributed UUIDs.
 
 Note that `UUIDRange` is inclusive on both ends.
 
-Divide into `2^n` equal range:
+Divide into `2^n` equal ranges:
 ```
 λ: uuidDivide 2
 [ UUIDRange {uuidLower = 00000000-0000-0000-0000-000000000000, uuidUpper = 3fffffff-ffff-ffff-ffff-ffffffffffff}
