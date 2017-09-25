@@ -11,8 +11,8 @@ import           Test.QuickCheck
 import           Test.QuickCheck.Instances ()
 
 import           Data.Foldable             (for_)
-import           Data.UUID                 (UUID, fromWords)
 import           Data.UUID.Divide
+import           Data.UUID.Types           (UUID, fromWords)
 import           Data.Word                 (Word32)
 
 spec :: Spec

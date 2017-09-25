@@ -1,12 +1,13 @@
+{-# LANGUAGE RecordWildCards     #-}
 {-# LANGUAGE ScopedTypeVariables #-}
-{-# LANGUAGE RecordWildCards #-}
 
 -- | TODO: Doc
+-- | TODO: Explicit exports
 module Data.UUID.Divide where
 
-import           Data.Bits (shiftR)
-import           Data.UUID (UUID, fromWords, toWords, nil)
-import           Data.Word (Word32)
+import           Data.Bits       (shiftR)
+import           Data.UUID.Types (UUID, fromWords, nil, toWords)
+import           Data.Word       (Word32)
 
 -- | Inclusive on both ends
 data UUIDRange =
@@ -52,7 +53,7 @@ data NthRangeError =
   | NthOutOfBounds
   deriving (Eq, Show)
 
--- TODO: Docs
+-- | TODO: Docs
 -- This function does validation for you. Right now it's always Right
 -- TODO: Maybe & partial versions
 nthRange :: Int -- ^ Power of 2 that we're dividing by
