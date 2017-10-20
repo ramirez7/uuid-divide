@@ -17,9 +17,9 @@ Divide into `2^n` equal ranges:
 , UUIDRange {uuidLower = c0000000-0000-0000-0000-000000000000, uuidUpper = ffffffff-ffff-ffff-ffff-ffffffffffff} ]
 ```
 
-Get the `nth` (starting at 0) range for a `2^n` division:
+Get the `nth` (starting at 0) range for a total division (must be a power of 2):
 ```
-λ: nthRange 2 2
+λ: nthRange 4 2
 Right (UUIDRange {uuidLower = 80000000-0000-0000-0000-000000000000, uuidUpper = bfffffff-ffff-ffff-ffff-ffffffffffff})
 ```
 

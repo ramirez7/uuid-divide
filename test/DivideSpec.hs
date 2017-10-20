@@ -31,7 +31,14 @@ spec = do
     it "should be consistent with uuidDivide" $ do
       for_ [0..8] $ \(po2 :: Int) ->
         for_ [0..fromIntegral $ ((2 :: Word32) ^ po2) - 1] $ \(n :: Word32) ->
-          nthRange po2 n `shouldBe` Right (uuidDivide po2 !! (fromIntegral n))
+          nthRange (2 ^ po2) n `shouldBe` Right (uuidDivide po2 !! (fromIntegral n))
+    it "should fail for non-po2 totals" $ do
+      nthRange 15 14 `shouldBe` Left NthNotPowerOfTwo
+    it "should fail when n is out of bounds" $ do
+      nthRange 16 17 `shouldBe` Left NthOutOfBounds
+
+-- TODO: 'uuidRangeContains' tests
+
 testData :: [[UUIDRange]]
 testData = fmap uuidDivide [0..16]
 
