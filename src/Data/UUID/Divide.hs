@@ -10,6 +10,12 @@ module Data.UUID.Divide (
   , uuidDivide
   , nthRange
   , NthRangeError(..)
+  -- * UUID creation helpers
+  -- $uuid_helpers
+  , maxPrefix
+  , minPrefix
+  , prefix
+  , withPrefix
   ) where
 
 import           Control.Exception (Exception)
@@ -49,14 +55,26 @@ uuidDivide po2 = take (2 ^ po2) ranges
 mkStep :: Int -> Word32
 mkStep po2 = maxBound `shiftR` po2
 
+-- $uuid_helpers
+--
+-- These functions are used internally but are exposed since they are useful
+-- combinators for creating 'UUID's when testing code that uses @uuid-divide@
+
+-- | Create a 'UUID' with the give 'Word32' prefix, followed by @0@s
 minPrefix :: Word32 -> UUID
 minPrefix x = fromWords x minBound minBound minBound
 
+-- | Create a 'UUID' with the give 'Word32' prefix, followed by @f@s
 maxPrefix :: Word32 -> UUID
 maxPrefix x = fromWords x maxBound maxBound maxBound
 
+-- | Get the upper 32 bits of a 'UUID'
 prefix :: UUID -> Word32
 prefix uuid = let (res, _, _, _) = toWords uuid in res
+
+-- | Modify a 'UUID' to have the given upper 32 bits
+withPrefix :: Word32 -> UUID -> UUID
+withPrefix p uuid = let (_, x, y, z) = toWords uuid in fromWords p x y z
 
 -- | Validation errors for the inputs to 'nthRange'
 data NthRangeError =
