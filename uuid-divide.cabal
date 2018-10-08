@@ -17,7 +17,8 @@ cabal-version:       >=1.10
 
 library
   exposed-modules:
-    Data.UUID.Divide
+                  Data.UUID.Divide
+                      Data.UUID.NewModule
   build-depends:
       base >=4.9 && <4.10
     , bits

@@ -15,8 +15,14 @@ import           Data.UUID.Divide
 import           Data.UUID.Types           (UUID, fromWords)
 import           Data.Word                 (Word32)
 
+--import           Data.UUID.NewModule
+
 spec :: Spec
 spec = do
+{-  describe "newFunction" $ do
+    it "should work" $ do
+    let x = newFunction () ()
+    x `shouldBe` ()-}
   describe "uuidDivide" $ do
     it "should always create UUIDRanges s.t. lower < upper" $
       testAll $ \UUIDRange{..} -> uuidLower < uuidUpper
