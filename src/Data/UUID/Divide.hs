@@ -16,6 +16,8 @@ module Data.UUID.Divide (
   , minPrefix
   , prefix
   , withPrefix
+  -- * DEBUGGING HPC
+  , myshow
   ) where
 
 import           Control.Exception (Exception)
@@ -105,3 +107,6 @@ nthRange total n = do
 
 -- TODO: Utility for non-po2 ranges?
 -- TODO: error when we exceed our po2 limit
+
+myshow :: Show a => a -> String
+myshow = show

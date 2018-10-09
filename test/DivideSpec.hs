@@ -21,8 +21,8 @@ spec :: Spec
 spec = do
   describe "newFunction" $ do
     it "should work" $ do
-      let x = newFunction () ()
-      x `shouldBe` ()
+--      let x = newFunction () ()
+      (show ([] :: [NewType])) `shouldBe` "[]"
   describe "uuidDivide" $ do
     it "should always create UUIDRanges s.t. lower < upper" $
       testAll $ \UUIDRange{..} -> uuidLower < uuidUpper
