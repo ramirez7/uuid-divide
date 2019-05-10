@@ -19,7 +19,7 @@ library
   exposed-modules:
     Data.UUID.Divide
   build-depends:
-      base >=4.9 && <4.10
+      base >=4.9 && <4.13
     , bits
     , uuid-types
   hs-source-dirs:      src
@@ -33,7 +33,7 @@ test-suite spec
       test
   ghc-options: -Wall
   build-depends:
-      base >=4.9 && <4.10
+      base >=4.9 && <4.13
     , hspec
     , QuickCheck
     , quickcheck-instances
