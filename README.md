@@ -2,7 +2,7 @@
 
 Mutually-exclusive, collectively-exhaustive sets of UUID ranges.
 
-Useful for evenly dividing operations over uniformly-distributed UUIDs.
+Useful for evenly dividing operations over uniformly-distributed UUIDs (e.g. sharding).
 
 ### Uses
 
