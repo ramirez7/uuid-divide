@@ -1,2 +1,5 @@
-dist
+dist/
 result
+dist-newstyle/
+cabal.project.local
+
